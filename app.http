@@ -1,0 +1,32 @@
+GET http://localhost:1234/movies
+
+###
+GET http://localhost:1234/movies/ad87133c-1720-4cff-a66a-43d28840e46d
+
+###
+GET http://localhost:1234/movies?genre=adventure
+
+### Crear una movie
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "Incccception",
+  "year": 2010,
+  "director": "Chrisssstopher Nolan",
+  "duration": 148,
+  "poster": "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_UF1000,1000_QL80_.jpg",
+  "genre": [
+    "Action",
+    "Adventure",
+    "Sci-Fi"
+  ]
+}
+
+### Actualizar una parte de la pelicula
+PATCH http://localhost:1234/movies/43e0dfdc-d9e3-48d2-a4f6-589d8babe93b
+Content-Type: application/json
+
+{
+  "year": 1993
+}
